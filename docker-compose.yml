@@ -1,0 +1,50 @@
+version: '3.1'
+
+services:
+  # mongo:
+  #   image: mongo
+  #   restart: always
+  #   ports:
+  #     - 27017:27017
+  #   # environment:
+  #   #   MONGO_INITDB_ROOT_USERNAME: admin
+  #   #   MONGO_INITDB_ROOT_PASSWORD: d218922u!
+  #   volumes:
+  #     - ./data:/data/db
+  # mongo-express:
+  #   image: mongo-express
+  #   restart: always
+  #   ports:
+  #     - 8081:8081
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: d218922u!
+  # explorerapi:
+  #   container_name: explorerapi
+  #   restart: always
+  #   image: 192.248.182.101:5000/explorerapi
+  #   ports:
+  #     - 3000:3000
+  #     - 3005:3005
+  #   links:
+  #     - mongo
+  #   depends_on:
+  #     - mongo
+  # fydd:
+  #   container_name: fydd
+  #   restart: always
+  #   image: 192.248.182.101:5000/fydd
+  #   ports:
+  #     - 37484:37484
+  #     - 37485:37485
+  fydforms:
+    container_name: fydforms
+    image: fydforms
+    ports:
+      - 3000:3000
+    # depends_on:
+    #   - mongo
+    #   - fydd
+    # links:
+    #   - mongo
+    #   - fydd
